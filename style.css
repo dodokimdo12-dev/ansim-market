@@ -1,0 +1,225 @@
+/* -------------------------------------------------
+   안심거래 – Premium UI Styles (Light & Safe Theme)
+   • Light pastel gradient background for a warm, trustworthy feel
+   • Clean soft-shadow cards
+   • Deep blue and mint-green accents representing safety and trust
+   • Smooth micro‑animations & hover effects
+   ------------------------------------------------- */
+
+:root {
+  --primary-color: #2b6cb0;     /* Trustworthy Blue */
+  --primary-hover: #1a365d;
+  --success-color: #319795;     /* Safety Mint/Green */
+  --error-color: #e53e3e;       /* Red for warnings */
+  --bg-gradient: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+  --card-bg: #ffffff;
+  --text-main: #2d3748;
+  --text-muted: #718096;
+  --border-color: #e2e8f0;
+}
+
+/* Global resets and typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* Layout */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--primary-color), var(--success-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.nav-btn {
+  background: #edf2f7;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: var(--primary-color);
+  color: #ffffff;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.main {
+  padding: 2.5rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Card / glass container */
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.card p {
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Form elements */
+label {
+  display: block;
+  margin-top: 1.2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-top: 0.5rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  background: #f7fafc;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+input::placeholder {
+  color: #a0aec0;
+}
+
+button.action-btn {
+  background: linear-gradient(45deg, var(--primary-color), var(--success-color));
+  border: none;
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  width: 100%;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(43, 108, 176, 0.2);
+}
+
+button.action-btn:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(43, 108, 176, 0.3);
+}
+
+/* Report list */
+.report-item {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.2rem 0;
+}
+
+.report-item:last-child { 
+  border-bottom: none; 
+}
+
+.report-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--error-color);
+  margin-bottom: 0.4rem;
+}
+
+.report-item div {
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.report-item small {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.2rem 1rem;
+  }
+  .nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .nav-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  .main {
+    padding: 1.5rem 1rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
+}
